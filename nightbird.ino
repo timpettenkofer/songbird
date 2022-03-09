@@ -56,7 +56,7 @@ void setup() {
 
   Serial.println("Warming up... wait for a min...");
  // delay execution of sketch for a min, to allow PIR sensor get stabilized
- for( int i = 1; i <= 120; i++){  // LED blinks until PIR sensor is stabilized
+ for( int i = 1; i <= 120; i++) {  // LED blinks until PIR sensor is stabilized
     digitalWrite(ledPin, HIGH); 
     delay(100);         
     digitalWrite(ledPin, LOW); 
@@ -213,6 +213,7 @@ void loop() {
         break;
           
     }
+  }
   
   else {
 
@@ -265,6 +266,8 @@ void loop() {
   // The power consumption of the chip will drop consistently
   LowPower.deepSleep();
 }
+}
+
 
 void wakeUp() {
   // This function will be called once on device wakeup
