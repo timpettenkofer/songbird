@@ -13,12 +13,12 @@ Twittr12  - Oriolus oriolus         - Goldamsel
 Twittr13  - Caprimulgus europaeus   - Nachtschwalbe
 Twittr14  - Apus apus               - Mauersegler
 Twittr15  - Hirundo rustica         - Rauchschwalbe
-Twittr16  - 
-Twittr17  - 
-Twittr18  - 
-Twittr19  - 
-Twittr20  - 
-Twittr21  - 
+Twittr16  - Anthus spinoletta       - Wasserpieper
+Twittr17  - Motacilla cinerea       - Gebirgsstelze
+Twittr18  - Oenanthe oenanthe       - Steinschmätzer
+Twittr19  - Fringilla coelebs       - Buchfink
+Twittr20  - Carduelis cannabina     - Hänfling
+Twittr21  - Acrocephalus scirpaeus  - Teichrohrsänger
 Twittr22  - 
 Twittr23  - 
 Twittr24  - 
