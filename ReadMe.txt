@@ -9,7 +9,7 @@ Twittr08  - Alauda arvensis         - Feldlerche
 Twittr09  - Melanocorypha calendra  - Kalanderlerche
 Twittr10  - Luscinia megarhynchos   - Nachtigall
 Twittr11  - Luscinia luscinia       - Sprosser
-Twittr12
-Twittr13
-Twittr14
-Twittr15
+Twittr12  - Oriolus oriolus         - Goldamsel
+Twittr13  - Caprimulgus europaeus   - Nachtschwalbe
+Twittr14  - Apus apus               - Mauersegler
+Twittr15  - Hirundo rustica         - Rauchschwalbe
