@@ -1,28 +1,28 @@
-Twittr01  - Turdus merula           - Amsel
-Twittr02  - Parus caerulus          - Blaumeise
-Twittr03  - Parus major             - Kohlmeise
-Twittr04  - Parus ater              - Tannenmeise
-Twittr05  - Emberiza melanocephala  - Kappenammer
-Twittr06  - Emberiza citrinella     - Goldammer
-Twittr07  - Upupa epops             - Wiedehopf
-Twittr08  - Alauda arvensis         - Feldlerche
-Twittr09  - Melanocorypha calendra  - Kalanderlerche
-Twittr10  - Luscinia megarhynchos   - Nachtigall
-Twittr11  - Luscinia luscinia       - Sprosser
-Twittr12  - Oriolus oriolus         - Goldamsel
-Twittr13  - Caprimulgus europaeus   - Nachtschwalbe
-Twittr14  - Apus apus               - Mauersegler
-Twittr15  - Hirundo rustica         - Rauchschwalbe
-Twittr16  - Anthus spinoletta       - Wasserpieper
-Twittr17  - Motacilla cinerea       - Gebirgsstelze
-Twittr18  - Oenanthe oenanthe       - Steinschmätzer
-Twittr19  - Fringilla coelebs       - Buchfink
-Twittr20  - Carduelis cannabina     - Hänfling
-Twittr21  - Acrocephalus scirpaeus  - Teichrohrsänger
-Twittr22  - 
-Twittr23  - 
-Twittr24  - 
-Twittr25  - 
+Twittr01  - Turdus merula               - Amsel
+Twittr02  - Parus caerulus              - Blaumeise
+Twittr03  - Parus major                 - Kohlmeise
+Twittr04  - Parus ater                  - Tannenmeise
+Twittr05  - Emberiza melanocephala      - Kappenammer
+Twittr06  - Emberiza citrinella         - Goldammer
+Twittr07  - Upupa epops                 - Wiedehopf
+Twittr08  - Alauda arvensis             - Feldlerche
+Twittr09  - Melanocorypha calendra      - Kalanderlerche
+Twittr10  - Luscinia megarhynchos       - Nachtigall
+Twittr11  - Luscinia luscinia           - Sprosser
+Twittr12  - Oriolus oriolus             - Goldamsel
+Twittr13  - Caprimulgus europaeus       - Nachtschwalbe
+Twittr14  - Apus apus                   - Mauersegler
+Twittr15  - Hirundo rustica             - Rauchschwalbe
+Twittr16  - Anthus spinoletta           - Wasserpieper
+Twittr17  - Motacilla cinerea           - Gebirgsstelze
+Twittr18  - Oenanthe oenanthe           - Steinschmätzer
+Twittr19  - Fringilla coelebs           - Buchfink
+Twittr20  - Carduelis cannabina         - Hänfling
+Twittr21  - Acrocephalus scirpaeus      - Teichrohrsänger
+Twittr22  - Acrocephalus arundinaceus   - Drosselrohrsänger
+Twittr23  - Acrocephalus schoenobaenus  - Schilfrohrsänger
+Twittr24  - Phylloscopus sibilatrix     - Waldlaubsänger
+Twittr25  - Troglodytes troglodytes     - Zaunkönig
 Twittr26  - 
 Twittr27  - 
 Twittr28  - 
