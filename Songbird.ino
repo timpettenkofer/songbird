@@ -240,42 +240,87 @@ void setup() {
 
 
 	// check if the I2S output can play the wave file	
-	if (!AudioOutI2S.canPlay(Twittr1)) {	
-	  Serial.println("Unable to play Twittr1.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr01)) {	
+	  Serial.println("Unable to play Twittr01.wav using I2S!");	
 	  while (1); // do nothing	
 	}    
-	if (!AudioOutI2S.canPlay(Twittr2)) {	
-	  Serial.println("Unable to play Twittr2.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr02)) {	
+	  Serial.println("Unable to play Twittr02.wav using I2S!");	
 	  while (1); // do nothing	
 	}
-	if (!AudioOutI2S.canPlay(Twittr3)) {	
-	  Serial.println("Unable to play Twittr3.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr03)) {	
+	  Serial.println("Unable to play Twittr03.wav using I2S!");	
 	  while (1); // do nothing	
 	} 
-	if (!AudioOutI2S.canPlay(Twittr4)) {	
-	  Serial.println("Unable to play Twittr4.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr04)) {	
+	  Serial.println("Unable to play Twittr04.wav using I2S!");	
 	  while (1); // do nothing	
 	}
-	if (!AudioOutI2S.canPlay(Twittr5)) {	
-	  Serial.println("Unable to play Twittr5.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr05)) {	
+	  Serial.println("Unable to play Twittr05.wav using I2S!");	
 	  while (1); // do nothing	
 	} 
-	if (!AudioOutI2S.canPlay(Night1)) {	
-	  Serial.println("Unable to play Night1.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr06)) {	
+	  Serial.println("Unable to play Twittr06.wav using I2S!");	
 	  while (1); // do nothing	
 	}    
-	if (!AudioOutI2S.canPlay(Night2)) {	
-	  Serial.println("Unable to play Night.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr07)) {	
+	  Serial.println("Unable to play Twittr07.wav using I2S!");	
 	  while (1); // do nothing	
 	}
-	if (!AudioOutI2S.canPlay(Night3)) {	
-	  Serial.println("Unable to play Night3.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr08)) {	
+	  Serial.println("Unable to play Twittr08.wav using I2S!");	
 	  while (1); // do nothing	
 	} 
-	if (!AudioOutI2S.canPlay(Night4)) {	
-	  Serial.println("Unable to play Night4.wav using I2S!");	
+	if (!AudioOutI2S.canPlay(Twittr09)) {	
+	  Serial.println("Unable to play Twittr09.wav using I2S!");	
 	  while (1); // do nothing	
 	}
+	if (!AudioOutI2S.canPlay(Twittr10)) {	
+	  Serial.println("Unable to play Twittr10.wav using I2S!");	
+	  while (1); // do nothing	
+	} 
+	if (!AudioOutI2S.canPlay(Twittr11)) {	
+	  Serial.println("Unable to play Twittr11.wav using I2S!");	
+	  while (1); // do nothing	
+	}    
+	if (!AudioOutI2S.canPlay(Twittr12)) {	
+	  Serial.println("Unable to play Twittr12.wav using I2S!");	
+	  while (1); // do nothing	
+	}
+	if (!AudioOutI2S.canPlay(Twittr13)) {	
+	  Serial.println("Unable to play Twittr13.wav using I2S!");	
+	  while (1); // do nothing	
+	} 
+	if (!AudioOutI2S.canPlay(Twittr14)) {	
+	  Serial.println("Unable to play Twittr14.wav using I2S!");	
+	  while (1); // do nothing	
+	}
+	if (!AudioOutI2S.canPlay(Twittr15)) {	
+	  Serial.println("Unable to play Twittr15.wav using I2S!");	
+	  while (1); // do nothing	
+	} 
+	if (!AudioOutI2S.canPlay(Twittr16)) {	
+	  Serial.println("Unable to play Twittr16.wav using I2S!");	
+	  while (1); // do nothing	
+	}    
+	if (!AudioOutI2S.canPlay(Twittr17)) {	
+	  Serial.println("Unable to play Twittr17.wav using I2S!");	
+	  while (1); // do nothing	
+	}
+	if (!AudioOutI2S.canPlay(Twittr18)) {	
+	  Serial.println("Unable to play Twittr18.wav using I2S!");	
+	  while (1); // do nothing	
+	} 
+	if (!AudioOutI2S.canPlay(Twittr19)) {	
+	  Serial.println("Unable to play Twittr19.wav using I2S!");	
+	  while (1); // do nothing	
+	}
+	if (!AudioOutI2S.canPlay(Twittr20)) {	
+	  Serial.println("Unable to play Twittr20.wav using I2S!");	
+	  while (1); // do nothing	
+	} 
+	
 }
 
 
@@ -284,10 +329,10 @@ void loop() {
   
   Serial.println("Motion detected!");	// print on output change
 
-  if (now.hour() >= 22 && now.hour() <= 6) {
+  if (now.hour() >= 22 && now.hour() <= 7) {
 
-    // adjust the playback volume	for night time
-	  AudioOutI2S.volume(20);	
+    // adjust the playback volume for night time
+	  AudioOutI2S.volume(15);	
 
     switch (random(1,8)) {
       case 1:
@@ -316,7 +361,7 @@ void loop() {
   else {
 
     // adjust the playback volume	for day time
-	  AudioOutI2S.volume(30);	
+	  AudioOutI2S.volume(20);	
     
     switch (random(1,8)) {
       case 1:
