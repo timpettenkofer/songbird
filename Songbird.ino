@@ -65,6 +65,8 @@ const char filename17[] = "Twittr17.wav";
 const char filename18[] = "Twittr18.wav";
 const char filename19[] = "Twittr19.wav";
 const char filename20[] = "Twittr20.wav";
+const char filename21[] = "Twittr21.wav";
+const char filename22[] = "Twittr22.wav";
 
 
 // variable representing the Wave File
@@ -88,6 +90,8 @@ SDWaveFile Twittr17;
 SDWaveFile Twittr18;
 SDWaveFile Twittr19;
 SDWaveFile Twittr20;
+SDWaveFile Twittr21;
+SDWaveFile Twittr22;
 RTC_PCF8523 rtc;
 
 
@@ -153,6 +157,8 @@ void setup() {
   Twittr18 = SDWaveFile(filename18);
   Twittr19 = SDWaveFile(filename19);
   Twittr20 = SDWaveFile(filename20);
+  Twittr21 = SDWaveFile(filename21);
+  Twittr22 = SDWaveFile(filename22);
   Serial.println("All SDWaveFiles have been created."); 	//uncomment for debugging
   
   // if the file didn't open, print an error and stop
@@ -236,8 +242,17 @@ void setup() {
     Serial.println("Error opening Twitter20.wav");
     while (true);
 	}
+  if (!Twittr21) {
+    Serial.println("Error opening Twitter21.wav");
+    while (true);
+	}
+  if (!Twittr22) {
+    Serial.println("Error opening Twitter22.wav");
+    while (true);
+	}
   Serial.println("All WAV files can be opened."); 	//uncomment for debugging
 
+	
 // check if the I2S output can play the wave file	
   if (!AudioOutI2S.canPlay(Twittr01)) {	
     Serial.println("Unable to play Twittr01.wav using I2S!");	
@@ -318,7 +333,16 @@ void setup() {
   if (!AudioOutI2S.canPlay(Twittr20)) {	
     Serial.println("Unable to play Twittr20.wav using I2S!");	
     while (1); // do nothing	
-    }	
+    }
+  if (!AudioOutI2S.canPlay(Twittr21)) {	
+    Serial.println("Unable to play Twittr21.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr22)) {	
+    Serial.println("Unable to play Twittr22.wav using I2S!");	
+    while (1); // do nothing	
+    }
+
   Serial.println("I2S Output can play all WAV files."); 	//uncomment for debugging
   Serial.println("Starting with loop now."); 			//uncomment for debugging
 }
@@ -335,27 +359,16 @@ void loop() {
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
 
-    switch (random(1,8)) {
+    switch (random(1,3)) {
       case 1:
-        Serial.println("Playing Night1.wav");
-        AudioOutI2S.play(Night1);
+        Serial.println("Playing Twittr21.wav");
+        AudioOutI2S.play(Twittr21);
         break;
      
       case 2:
-        Serial.println("Playing Night2.wav");
-        AudioOutI2S.play(Night2);
-        break;
-
-      case 3:
-        Serial.println("Playing Night3.wav");
-        AudioOutI2S.play(Night3);
-        break;
-
-      case 4:
-        Serial.println("Playing Night4.wav");
-        AudioOutI2S.play(Night4);
-        break;
-          
+        Serial.println("Playing Twittr22.wav");
+        AudioOutI2S.play(Twittr22);
+        break;          
     }
   }
   
@@ -365,40 +378,105 @@ void loop() {
     // adjust the playback volume	for day time
 	  AudioOutI2S.volume(20);	
     
-    switch (random(1,8)) {
+    switch (random(1,21)) {
       case 1:
-        Serial.println("Playing Twittr1.wav");
-        AudioOutI2S.play(Twittr1);
+        Serial.println("Playing Twittr01.wav");
+        AudioOutI2S.play(Twittr01);
         break;
      
       case 2:
-        Serial.println("Playing Twittr2.wav");
-        AudioOutI2S.play(Twittr2);
+        Serial.println("Playing Twittr02.wav");
+        AudioOutI2S.play(Twittr02);
         break;
 
       case 3:
-        Serial.println("Playing Twittr3.wav");
-        AudioOutI2S.play(Twittr3);
+        Serial.println("Playing Twittr03.wav");
+        AudioOutI2S.play(Twittr03);
         break;
 
       case 4:
-        Serial.println("Playing Twittr4.wav");
-        AudioOutI2S.play(Twittr4);
+        Serial.println("Playing Twittr04.wav");
+        AudioOutI2S.play(Twittr04);
         break;
           
       case 5:
-        Serial.println("Playing Twittr5.wav");
-        AudioOutI2S.play(Twittr5);
+        Serial.println("Playing Twittr05.wav");
+        AudioOutI2S.play(Twittr05);
         break;
         
       case 6:
-        Serial.println("Playing Night1.wav");
-        AudioOutI2S.play(Night1);
+        Serial.println("Playing Twittr06.wav");
+        AudioOutI2S.play(Twittr06);
         break;          
 
       case 7:
-        Serial.println("Playing Night2.wav");
-        AudioOutI2S.play(Night2);
+        Serial.println("Playing Twittr07.wav");
+        AudioOutI2S.play(Twittr07);
+        break;
+		    
+      case 8:
+        Serial.println("Playing Twittr08.wav");
+        AudioOutI2S.play(Twittr08);
+        break;
+        
+      case 9:
+        Serial.println("Playing Twittr09.wav");
+        AudioOutI2S.play(Twittr09);
+        break;          
+
+      case 10:
+        Serial.println("Playing Twittr10.wav");
+        AudioOutI2S.play(Twittr10);
+        break;
+		    
+      case 11:
+        Serial.println("Playing Twittr11.wav");
+        AudioOutI2S.play(Twittr11);
+        break;
+     
+      case 12:
+        Serial.println("Playing Twittr12.wav");
+        AudioOutI2S.play(Twittr12);
+        break;
+
+      case 13:
+        Serial.println("Playing Twittr13.wav");
+        AudioOutI2S.play(Twittr13);
+        break;
+
+      case 14:
+        Serial.println("Playing Twittr14.wav");
+        AudioOutI2S.play(Twittr14);
+        break;
+          
+      case 15:
+        Serial.println("Playing Twittr15.wav");
+        AudioOutI2S.play(Twittr15);
+        break;
+        
+      case 16:
+        Serial.println("Playing Twittr16.wav");
+        AudioOutI2S.play(Twittr16);
+        break;          
+
+      case 17:
+        Serial.println("Playing Twittr17.wav");
+        AudioOutI2S.play(Twittr17);
+        break;
+		    
+      case 18:
+        Serial.println("Playing Twittr18.wav");
+        AudioOutI2S.play(Twittr18);
+        break;
+        
+      case 19:
+        Serial.println("Playing Twittr19.wav");
+        AudioOutI2S.play(Twittr19);
+        break;          
+
+      case 20:
+        Serial.println("Playing Twittr20.wav");
+        AudioOutI2S.play(Twittr20);
         break;
     }      
     
