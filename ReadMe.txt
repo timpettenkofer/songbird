@@ -8,23 +8,24 @@ Twittr07  - Upupa epops                 - Wiedehopf
 Twittr08  - Alauda arvensis             - Feldlerche
 Twittr09  - Melanocorypha calendra      - Kalanderlerche
 Twittr10  - Luscinia megarhynchos       - Nachtigall
-Twittr11  - Luscinia luscinia           - Sprosser
-Twittr12  - Oriolus oriolus             - Goldamsel
-Twittr13  - Caprimulgus europaeus       - Nachtschwalbe
-Twittr14  - Apus apus                   - Mauersegler
-Twittr15  - Hirundo rustica             - Rauchschwalbe
-Twittr16  - Anthus spinoletta           - Wasserpieper
-Twittr17  - Motacilla cinerea           - Gebirgsstelze
-Twittr18  - Oenanthe oenanthe           - Steinschmätzer
-Twittr19  - Fringilla coelebs           - Buchfink
-Twittr20  - Carduelis cannabina         - Hänfling
-Twittr21  - Acrocephalus scirpaeus      - Teichrohrsänger
-Twittr22  - Acrocephalus arundinaceus   - Drosselrohrsänger
-Twittr23  - Acrocephalus schoenobaenus  - Schilfrohrsänger
-Twittr24  - Phylloscopus sibilatrix     - Waldlaubsänger
-Twittr25  - Troglodytes troglodytes     - Zaunkönig
-Twittr26  - 
-Twittr27  - 
+Twittr11  - Luscinia megarhynchos       - Nachtigall
+Twittr12  - Luscinia megarhynchos       - Nachtigall
+Twittr13  - Luscinia luscinia           - Sprosser
+Twittr14  - Oriolus oriolus             - Goldamsel
+Twittr15  - Caprimulgus europaeus       - Nachtschwalbe
+Twittr16  - Apus apus                   - Mauersegler
+Twittr17  - Hirundo rustica             - Rauchschwalbe
+Twittr18  - Anthus spinoletta           - Wasserpieper
+Twittr19  - Motacilla cinerea           - Gebirgsstelze
+Twittr20  - Oenanthe oenanthe           - Steinschmätzer
+Twittr21  - Fringilla coelebs           - Buchfink
+Twittr22  - Carduelis cannabina         - Hänfling
+Twittr23  - Acrocephalus scirpaeus      - Teichrohrsänger
+Twittr24  - Acrocephalus arundinaceus   - Drosselrohrsänger
+Twittr25  - Acrocephalus schoenobaenus  - Schilfrohrsänger
+Twittr26  - Phylloscopus sibilatrix     - Waldlaubsänger
+Twittr27  - Troglodytes troglodytes     - Zaunkönig
 Twittr28  - 
 Twittr29  - 
 Twittr30  - 
+
