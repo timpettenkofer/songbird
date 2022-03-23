@@ -123,15 +123,14 @@ void setup() {
   }
   Serial.print("RTC is up and running.");
 
-	// setup the SD card, depending on your shield of breakout board	
-	// you may need to pass a pin number in begin for SS	
-	Serial.print("Initializing SD card...");	
+// setup the SD card, depending on your shield of breakout board	
+  Serial.print("Initializing SD card...");	
 
-	if (!SD.begin()) {	
-	  Serial.println("initialization failed!");	
-	  return;	
-	}	
-	Serial.println("initialization done.");	
+  if (!SD.begin()) {	
+    Serial.println("initialization failed!");	
+    return;	
+    }	
+    Serial.println("initialization done.");	
   
   // create a SDWaveFile	
   Twittr01 = SDWaveFile(filename1);
@@ -154,7 +153,7 @@ void setup() {
   Twittr18 = SDWaveFile(filename18);
   Twittr19 = SDWaveFile(filename19);
   Twittr20 = SDWaveFile(filename20);
- 
+  Serial.println("All SDWaveFiles have been created."); 	//uncomment for debugging
   
   // if the file didn't open, print an error and stop
   if (!Twittr01) {
@@ -237,90 +236,91 @@ void setup() {
     Serial.println("Error opening Twitter20.wav");
     while (true);
 	}
+  Serial.println("All WAV files can be opened."); 	//uncomment for debugging
 
-
-	// check if the I2S output can play the wave file	
-	if (!AudioOutI2S.canPlay(Twittr01)) {	
-	  Serial.println("Unable to play Twittr01.wav using I2S!");	
-	  while (1); // do nothing	
-	}    
-	if (!AudioOutI2S.canPlay(Twittr02)) {	
-	  Serial.println("Unable to play Twittr02.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr03)) {	
-	  Serial.println("Unable to play Twittr03.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr04)) {	
-	  Serial.println("Unable to play Twittr04.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr05)) {	
-	  Serial.println("Unable to play Twittr05.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr06)) {	
-	  Serial.println("Unable to play Twittr06.wav using I2S!");	
-	  while (1); // do nothing	
-	}    
-	if (!AudioOutI2S.canPlay(Twittr07)) {	
-	  Serial.println("Unable to play Twittr07.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr08)) {	
-	  Serial.println("Unable to play Twittr08.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr09)) {	
-	  Serial.println("Unable to play Twittr09.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr10)) {	
-	  Serial.println("Unable to play Twittr10.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr11)) {	
-	  Serial.println("Unable to play Twittr11.wav using I2S!");	
-	  while (1); // do nothing	
-	}    
-	if (!AudioOutI2S.canPlay(Twittr12)) {	
-	  Serial.println("Unable to play Twittr12.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr13)) {	
-	  Serial.println("Unable to play Twittr13.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr14)) {	
-	  Serial.println("Unable to play Twittr14.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr15)) {	
-	  Serial.println("Unable to play Twittr15.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr16)) {	
-	  Serial.println("Unable to play Twittr16.wav using I2S!");	
-	  while (1); // do nothing	
-	}    
-	if (!AudioOutI2S.canPlay(Twittr17)) {	
-	  Serial.println("Unable to play Twittr17.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr18)) {	
-	  Serial.println("Unable to play Twittr18.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	if (!AudioOutI2S.canPlay(Twittr19)) {	
-	  Serial.println("Unable to play Twittr19.wav using I2S!");	
-	  while (1); // do nothing	
-	}
-	if (!AudioOutI2S.canPlay(Twittr20)) {	
-	  Serial.println("Unable to play Twittr20.wav using I2S!");	
-	  while (1); // do nothing	
-	} 
-	
+// check if the I2S output can play the wave file	
+  if (!AudioOutI2S.canPlay(Twittr01)) {	
+    Serial.println("Unable to play Twittr01.wav using I2S!");	
+    while (1); // do nothing	
+    }    
+  if (!AudioOutI2S.canPlay(Twittr02)) {	
+    Serial.println("Unable to play Twittr02.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr03)) {	
+    Serial.println("Unable to play Twittr03.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr04)) {	
+    Serial.println("Unable to play Twittr04.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr05)) {	
+    Serial.println("Unable to play Twittr05.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr06)) {	
+    Serial.println("Unable to play Twittr06.wav using I2S!");	
+    while (1); // do nothing	
+    }    
+  if (!AudioOutI2S.canPlay(Twittr07)) {	
+    Serial.println("Unable to play Twittr07.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr08)) {	
+    Serial.println("Unable to play Twittr08.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr09)) {	
+    Serial.println("Unable to play Twittr09.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr10)) {	
+    Serial.println("Unable to play Twittr10.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr11)) {	
+    Serial.println("Unable to play Twittr11.wav using I2S!");	
+    while (1); // do nothing	
+    }    
+  if (!AudioOutI2S.canPlay(Twittr12)) {	
+    Serial.println("Unable to play Twittr12.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr13)) {	
+    Serial.println("Unable to play Twittr13.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr14)) {	
+    Serial.println("Unable to play Twittr14.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr15)) {	
+    Serial.println("Unable to play Twittr15.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr16)) {	
+    Serial.println("Unable to play Twittr16.wav using I2S!");	
+    while (1); // do nothing	
+    }    
+  if (!AudioOutI2S.canPlay(Twittr17)) {	
+    Serial.println("Unable to play Twittr17.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr18)) {	
+    Serial.println("Unable to play Twittr18.wav using I2S!");	
+    while (1); // do nothing	
+    } 
+  if (!AudioOutI2S.canPlay(Twittr19)) {	
+    Serial.println("Unable to play Twittr19.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr20)) {	
+    Serial.println("Unable to play Twittr20.wav using I2S!");	
+    while (1); // do nothing	
+    }	
+  Serial.println("I2S Output can play all WAV files."); 	//uncomment for debugging
+  Serial.println("Starting with loop now."); 			//uncomment for debugging
 }
 
 
@@ -330,6 +330,7 @@ void loop() {
   Serial.println("Motion detected!");	// print on output change
 
   if (now.hour() >= 22 && now.hour() <= 7) {
+    Serial.println("It's night."); 	//uncomment for debugging
 
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
@@ -359,6 +360,7 @@ void loop() {
   }
   
   else {
+    Serial.println("It's day."); 	//uncomment for debugging
 
     // adjust the playback volume	for day time
 	  AudioOutI2S.volume(20);	
