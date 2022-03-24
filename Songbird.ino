@@ -360,7 +360,7 @@ void loop() {
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
 
-    switch (random(1,3)) {
+    switch (random(1,5)) {		//play Twittr21 with a higher possiblity
       case 1:
         Serial.println("Playing Twittr21.wav");
         AudioOutI2S.play(Twittr21);
@@ -369,7 +369,17 @@ void loop() {
       case 2:
         Serial.println("Playing Twittr22.wav");
         AudioOutI2S.play(Twittr22);
-        break;          
+        break;   
+      
+      case 3:
+        Serial.println("Playing Twittr21.wav");
+        AudioOutI2S.play(Twittr21);
+        break;
+     
+      case 4:
+        Serial.println("Playing Twittr21.wav");
+        AudioOutI2S.play(Twittr22);
+        break;   
     }
   }
   
