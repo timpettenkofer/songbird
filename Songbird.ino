@@ -125,6 +125,7 @@ void setup() {
   if (! rtc.initialized() || rtc.lostPower()) {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
+  rtc.start();		// Ensure the clock is running
   Serial.print("RTC is up and running.");
 
 // setup the SD card, depending on your shield of breakout board	
@@ -353,19 +354,19 @@ void loop() {
   
   Serial.println("Motion detected!");	// print on output change
 
-  if (now.hour() >= 22 && now.hour() <= 7) {
+  if (now.hour() >= 8 && now.hour() <= 12) {
     Serial.println("It's night."); 	//uncomment for debugging
 
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
 
-    switch (random(1,3)) {
-      case 1:
+    switch (random(21,23)) {
+      case 21:
         Serial.println("Playing Twittr21.wav");
         AudioOutI2S.play(Twittr21);
         break;
      
-      case 2:
+      case 22:
         Serial.println("Playing Twittr22.wav");
         AudioOutI2S.play(Twittr22);
         break;          
