@@ -360,13 +360,13 @@ void loop() {
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
 
-    switch (random(21,23)) {
-      case 21:
+    switch (random(1,3)) {
+      case 1:
         Serial.println("Playing Twittr21.wav");
         AudioOutI2S.play(Twittr21);
         break;
      
-      case 22:
+      case 2:
         Serial.println("Playing Twittr22.wav");
         AudioOutI2S.play(Twittr22);
         break;          
@@ -480,7 +480,7 @@ void loop() {
         AudioOutI2S.play(Twittr20);
         break;
     }      
-    
+}    
       
   delay(120000);// wait 120 seconds
   Serial.println("Motion ended!");	// print on output change    
@@ -489,7 +489,7 @@ void loop() {
   // Triggers an infinite sleep (the device will be woken up only by the registered wakeup sources)
   // The power consumption of the chip will drop consistently
   LowPower.deepSleep();
-}
+
 }
 
 
