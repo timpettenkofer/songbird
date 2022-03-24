@@ -99,7 +99,7 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
 
-  Serial.print("Warming up... wait for a min...");
+  Serial.println("Warming up... wait for a min...");
  // delay execution of sketch for a min, to allow PIR sensor get stabilized
  for( int i = 1; i <= 120; i++) {  // LED blinks until PIR sensor is stabilized
     digitalWrite(ledPin, HIGH); 
@@ -107,35 +107,35 @@ void setup() {
     digitalWrite(ledPin, LOW); 
     delay(100); 
  }
-  Serial.println("Sensor is ready");     
+  Serial.print("Sensor is ready");     
 
   pinMode(inputPin, INPUT);     // declare sensor as input
   LowPower.attachInterruptWakeup(inputPin, wakeUp, CHANGE);
 
 // Check if the RTC is connected
-  Serial.print("Checking if Real-Time-Clock is connected...");
+  Serial.println("Checking if Real-Time-Clock is connected...");
     if (! rtc.begin()) {
-    Serial.println("Couldn't find RTC");
+    Serial.print("Couldn't find RTC!");
     Serial.flush();
     while (1) delay(10);
     }
 
 // Set the RTC to the date & time this sketch was compiled
-  Serial.print("Setting Real-Time-Clock if needed...");
+  Serial.println("Setting Real-Time-Clock if needed...");
   if (! rtc.initialized() || rtc.lostPower()) {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
   rtc.start();		// Ensure the clock is running
-  Serial.println("RTC is up and running.");
+  Serial.print("RTC is up and running.");
 
 // setup the SD card, depending on your shield of breakout board	
-  Serial.print("Initializing SD card...");	
+  Serial.println("Initializing SD card...");	
 
   if (!SD.begin()) {	
-    Serial.println("initialization failed!");	
+    Serial.print("initialization failed!");	
     return;	
     }	
-    Serial.println("initialization done.");	
+    Serial.print("initialization done.");	
   
   // create a SDWaveFile	
   Twittr01 = SDWaveFile(filename1);
@@ -347,7 +347,7 @@ void setup() {
 void loop() {
   DateTime now = rtc.now();
   
-  Serial.print("Motion detected!");	// print on output change
+  Serial.println("Motion detected!");	// print on output change
 
   if (now.hour() >= 22 && now.hour() <= 6) {
 
@@ -485,7 +485,7 @@ void loop() {
 }    
       
   delay(120000);// wait 120 seconds
-  Serial.print("Motion ended!");	// print on output change
+  Serial.println("Motion ended!");	// print on output change
   Serial.println("Going to sleep...");	// uncomment for debugging    
    
  
