@@ -160,7 +160,6 @@ void setup() {
   Twittr20 = SDWaveFile(filename20);
   Twittr21 = SDWaveFile(filename21);
   Twittr22 = SDWaveFile(filename22);
-  Serial.print("All SDWaveFiles have been created."); 		//uncomment for debugging
   
   // if the file didn't open, print an error and stop
   if (!Twittr01) {
@@ -251,7 +250,6 @@ void setup() {
     Serial.println("Error opening Twitter22.wav");
     while (true);
 	}
-  Serial.print("All WAV files can be opened."); 	//uncomment for debugging
 
 	
 // check if the I2S output can play the wave file	
@@ -343,9 +341,6 @@ void setup() {
     Serial.println("Unable to play Twittr22.wav using I2S!");	
     while (1); // do nothing	
     }
-
-  Serial.print("I2S Output can play all WAV files."); 		//uncomment for debugging
-  Serial.print("Starting with loop now."); 			//uncomment for debugging
 }
 
 
@@ -355,7 +350,6 @@ void loop() {
   Serial.print("Motion detected!");	// print on output change
 
   if (now.hour() >= 22 && now.hour() <= 6) {
-    Serial.print("It's night."); 	//uncomment for debugging
 
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
@@ -384,8 +378,6 @@ void loop() {
   }
   
   else {
-    Serial.print("It's day."); 	//uncomment for debugging
-
     // adjust the playback volume for day time
 	  AudioOutI2S.volume(20);	
     
@@ -494,7 +486,7 @@ void loop() {
       
   delay(120000);// wait 120 seconds
   Serial.print("Motion ended!");	// print on output change
-  Serial.print("Going to sleep...");	// uncomment for debugging    
+  Serial.println("Going to sleep...");	// uncomment for debugging    
    
  
   // Triggers an infinite sleep (the device will be woken up only by the registered wakeup sources)
