@@ -113,15 +113,15 @@ void setup() {
   LowPower.attachInterruptWakeup(inputPin, wakeUp, CHANGE);
 
 // Check if the RTC is connected
-  Serial.print("Checking if Real-Time-Clock is connected...");
+  Serial.println("Checking if Real-Time-Clock is connected...");
     if (! rtc.begin()) {
-    Serial.println("Couldn't find RTC");
+    Serial.print("Couldn't find RTC");
     Serial.flush();
     while (1) delay(10);
     }
 
 // Set the RTC to the date & time this sketch was compiled
-  Serial.print("Setting Real-Time-Clock if needed...");
+  Serial.println("Setting Real-Time-Clock if needed...");
   if (! rtc.initialized() || rtc.lostPower()) {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
@@ -129,7 +129,7 @@ void setup() {
   Serial.print("RTC is up and running.");
 
 // setup the SD card, depending on your shield of breakout board	
-  Serial.print("Initializing SD card...");	
+  Serial.println("Initializing SD card...");	
 
   if (!SD.begin()) {	
     Serial.println("initialization failed!");	
