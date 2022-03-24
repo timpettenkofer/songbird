@@ -354,7 +354,7 @@ void loop() {
   
   Serial.println("Motion detected!");	// print on output change
 
-  if (now.hour() >= 8 && now.hour() <= 12) {
+  if (now.hour() >= 22 && now.hour() <= 6) {
     Serial.println("It's night."); 	//uncomment for debugging
 
     // adjust the playback volume for night time
@@ -376,7 +376,7 @@ void loop() {
   else {
     Serial.println("It's day."); 	//uncomment for debugging
 
-    // adjust the playback volume	for day time
+    // adjust the playback volume for day time
 	  AudioOutI2S.volume(20);	
     
     switch (random(1,21)) {
