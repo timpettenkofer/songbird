@@ -99,7 +99,7 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
 
-  Serial.println("Warming up... wait for a min...");
+  Serial.print("Warming up... wait for a min...");
  // delay execution of sketch for a min, to allow PIR sensor get stabilized
  for( int i = 1; i <= 120; i++) {  // LED blinks until PIR sensor is stabilized
     digitalWrite(ledPin, HIGH); 
@@ -113,23 +113,23 @@ void setup() {
   LowPower.attachInterruptWakeup(inputPin, wakeUp, CHANGE);
 
 // Check if the RTC is connected
-  Serial.println("Checking if Real-Time-Clock is connected...");
+  Serial.print("Checking if Real-Time-Clock is connected...");
     if (! rtc.begin()) {
-    Serial.print("Couldn't find RTC");
+    Serial.println("Couldn't find RTC");
     Serial.flush();
     while (1) delay(10);
     }
 
 // Set the RTC to the date & time this sketch was compiled
-  Serial.println("Setting Real-Time-Clock if needed...");
+  Serial.print("Setting Real-Time-Clock if needed...");
   if (! rtc.initialized() || rtc.lostPower()) {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
   rtc.start();		// Ensure the clock is running
-  Serial.print("RTC is up and running.");
+  Serial.println("RTC is up and running.");
 
 // setup the SD card, depending on your shield of breakout board	
-  Serial.println("Initializing SD card...");	
+  Serial.print("Initializing SD card...");	
 
   if (!SD.begin()) {	
     Serial.println("initialization failed!");	
@@ -160,7 +160,7 @@ void setup() {
   Twittr20 = SDWaveFile(filename20);
   Twittr21 = SDWaveFile(filename21);
   Twittr22 = SDWaveFile(filename22);
-  Serial.println("All SDWaveFiles have been created."); 	//uncomment for debugging
+  Serial.print("All SDWaveFiles have been created."); 		//uncomment for debugging
   
   // if the file didn't open, print an error and stop
   if (!Twittr01) {
@@ -251,7 +251,7 @@ void setup() {
     Serial.println("Error opening Twitter22.wav");
     while (true);
 	}
-  Serial.println("All WAV files can be opened."); 	//uncomment for debugging
+  Serial.print("All WAV files can be opened."); 	//uncomment for debugging
 
 	
 // check if the I2S output can play the wave file	
@@ -344,18 +344,18 @@ void setup() {
     while (1); // do nothing	
     }
 
-  Serial.println("I2S Output can play all WAV files."); 	//uncomment for debugging
-  Serial.println("Starting with loop now."); 			//uncomment for debugging
+  Serial.print("I2S Output can play all WAV files."); 		//uncomment for debugging
+  Serial.print("Starting with loop now."); 			//uncomment for debugging
 }
 
 
 void loop() {
   DateTime now = rtc.now();
   
-  Serial.println("Motion detected!");	// print on output change
+  Serial.print("Motion detected!");	// print on output change
 
   if (now.hour() >= 22 && now.hour() <= 6) {
-    Serial.println("It's night."); 	//uncomment for debugging
+    Serial.print("It's night."); 	//uncomment for debugging
 
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(15);	
@@ -384,7 +384,7 @@ void loop() {
   }
   
   else {
-    Serial.println("It's day."); 	//uncomment for debugging
+    Serial.print("It's day."); 	//uncomment for debugging
 
     // adjust the playback volume for day time
 	  AudioOutI2S.volume(20);	
@@ -493,7 +493,8 @@ void loop() {
 }    
       
   delay(120000);// wait 120 seconds
-  Serial.println("Motion ended!");	// print on output change    
+  Serial.print("Motion ended!");	// print on output change
+  Serial.print("Going to sleep...");	// uncomment for debugging    
    
  
   // Triggers an infinite sleep (the device will be woken up only by the registered wakeup sources)
