@@ -352,7 +352,7 @@ void loop() {
   if (now.hour() >= 22 || now.hour() <= 6) {
 
     // adjust the playback volume for night time
-	  AudioOutI2S.volume(15);	
+	  AudioOutI2S.volume(5);	
 
     switch (random(1,5)) {		//play Twittr21 with a higher possiblity
       case 1:
@@ -372,15 +372,15 @@ void loop() {
      
       case 4:
         Serial.println("Playing Twittr21.wav");
-        AudioOutI2S.play(Twittr22);
+        AudioOutI2S.play(Twittr21);
         break;   
     }
   }
   
- else if (now.hour() > 6 && now.hour() < 8) {
+  else if (now.hour() > 6 && now.hour() < 8) {
 
     // adjust the playback volume for dawn
-	  AudioOutI2S.volume(15);	
+	  AudioOutI2S.volume(10);	
 
     switch (random(1,4)) {
       case 1:
@@ -402,7 +402,7 @@ void loop() {
 	
   else {
     // adjust the playback volume for day time
-	  AudioOutI2S.volume(20);	
+	  AudioOutI2S.volume(15);	
     
     switch (random(1,21)) {
       case 1:
@@ -468,11 +468,6 @@ void loop() {
       case 13:
         Serial.println("Playing Twittr13.wav");
         AudioOutI2S.play(Twittr13);
-        break;
-
-      case 14:
-        Serial.println("Playing Twittr14.wav");
-        AudioOutI2S.play(Twittr14);
         break;
           
       case 15:
