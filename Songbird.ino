@@ -39,10 +39,18 @@ SCL       to SCL (12)
 #include <ArduinoSound.h>
 #include <RTClib.h>
 
+// code to reduce power consumption
+// disable ADC
+ADCSRA = 0;  
+
+// turn off brown-out enable in software
+MCUCR = bit (BODS) | bit (BODSE);  // turn on brown-out enable select
+MCUCR = bit (BODS);        // this must be done within 4 clock cycles of above
+interrupts ();             // guarantees next instruction executed
+sleep_cpu ();              // sleep within 3 clock cycles of above
+
 int ledPin = LED_BUILTIN;       // choose the pin for the LED
 int inputPin = 7;               // choose the digital input pin (for PIR sensor)
-//int pirState = LOW;             // we start, assuming no motion detected
-//int pirValue = 0;               // variable for reading the pin status
 
 // filename of wave file to play
 const char filename1[] = "Twittr01.wav";
