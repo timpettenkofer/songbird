@@ -58,7 +58,6 @@ const char filename10[] = "Twittr10.wav";
 const char filename11[] = "Twittr11.wav";
 const char filename12[] = "Twittr12.wav";
 const char filename13[] = "Twittr13.wav";
-const char filename14[] = "Twittr14.wav";
 const char filename15[] = "Twittr15.wav";
 const char filename16[] = "Twittr16.wav";
 const char filename17[] = "Twittr17.wav";
@@ -67,7 +66,8 @@ const char filename19[] = "Twittr19.wav";
 const char filename20[] = "Twittr20.wav";
 const char filename21[] = "Twittr21.wav";
 const char filename22[] = "Twittr22.wav";
-
+const char filename23[] = "Twittr23.wav";
+const char filename24[] = "Twittr24.wav";
 
 // variable representing the Wave File
 SDWaveFile Twittr01;
@@ -83,7 +83,6 @@ SDWaveFile Twittr10;
 SDWaveFile Twittr11;
 SDWaveFile Twittr12;
 SDWaveFile Twittr13;
-SDWaveFile Twittr14;
 SDWaveFile Twittr15;
 SDWaveFile Twittr16;
 SDWaveFile Twittr17;
@@ -92,6 +91,8 @@ SDWaveFile Twittr19;
 SDWaveFile Twittr20;
 SDWaveFile Twittr21;
 SDWaveFile Twittr22;
+SDWaveFile Twittr23;
+SDWaveFile Twittr24;
 RTC_PCF8523 rtc;
 
 
@@ -151,7 +152,6 @@ void setup() {
   Twittr11 = SDWaveFile(filename11);
   Twittr12 = SDWaveFile(filename12);
   Twittr13 = SDWaveFile(filename13);
-  Twittr14 = SDWaveFile(filename14);
   Twittr15 = SDWaveFile(filename15);
   Twittr16 = SDWaveFile(filename16);
   Twittr17 = SDWaveFile(filename17);
@@ -160,6 +160,8 @@ void setup() {
   Twittr20 = SDWaveFile(filename20);
   Twittr21 = SDWaveFile(filename21);
   Twittr22 = SDWaveFile(filename22);
+  Twittr23 = SDWaveFile(filename23);
+  Twittr24 = SDWaveFile(filename24);
   
   // if the file didn't open, print an error and stop
   if (!Twittr01) {
@@ -214,10 +216,6 @@ void setup() {
     Serial.println("Error opening Twitter13.wav");
     while (true);
 	}
-  if (!Twittr14) {
-    Serial.println("Error opening Twitter14.wav");
-    while (true);
-	}
   if (!Twittr15) {
     Serial.println("Error opening Twitter15.wav");
     while (true);
@@ -248,6 +246,14 @@ void setup() {
 	}
   if (!Twittr22) {
     Serial.println("Error opening Twitter22.wav");
+    while (true);
+	}
+  if (!Twittr23) {
+    Serial.println("Error opening Twitter23.wav");
+    while (true);
+	}
+  if (!Twittr24) {
+    Serial.println("Error opening Twitter24.wav");
     while (true);
 	}
 
@@ -305,10 +311,6 @@ void setup() {
     Serial.println("Unable to play Twittr13.wav using I2S!");	
     while (1); // do nothing	
     } 
-  if (!AudioOutI2S.canPlay(Twittr14)) {	
-    Serial.println("Unable to play Twittr14.wav using I2S!");	
-    while (1); // do nothing	
-    }
   if (!AudioOutI2S.canPlay(Twittr15)) {	
     Serial.println("Unable to play Twittr15.wav using I2S!");	
     while (1); // do nothing	
@@ -341,6 +343,14 @@ void setup() {
     Serial.println("Unable to play Twittr22.wav using I2S!");	
     while (1); // do nothing	
     }
+  if (!AudioOutI2S.canPlay(Twittr23)) {	
+    Serial.println("Unable to play Twittr23.wav using I2S!");	
+    while (1); // do nothing	
+    }
+  if (!AudioOutI2S.canPlay(Twittr24)) {	
+    Serial.println("Unable to play Twittr24.wav using I2S!");	
+    while (1); // do nothing	
+    }
 }
 
 
@@ -354,30 +364,35 @@ void loop() {
     // adjust the playback volume for night time
 	  AudioOutI2S.volume(5);	
 
-    switch (random(1,5)) {		//play Twittr21 with a higher possiblity
+    switch (random(1,6)) {		//play Twittr21 with a higher possiblity
       case 1:
         Serial.println("Playing Twittr21.wav");
         AudioOutI2S.play(Twittr21);
         break;
      
       case 2:
+        Serial.println("Playing Twittr21.wav");
+        AudioOutI2S.play(Twittr21);
+        break;
+		    
+      case 3:
         Serial.println("Playing Twittr22.wav");
         AudioOutI2S.play(Twittr22);
         break;   
       
-      case 3:
-        Serial.println("Playing Twittr21.wav");
-        AudioOutI2S.play(Twittr21);
+      case 4:
+        Serial.println("Playing Twittr23.wav");
+        AudioOutI2S.play(Twittr23);
         break;
      
-      case 4:
-        Serial.println("Playing Twittr21.wav");
-        AudioOutI2S.play(Twittr21);
+      case 5:
+        Serial.println("Playing Twittr24.wav");
+        AudioOutI2S.play(Twittr24);
         break;   
     }
   }
   
-  else if (now.hour() > 6 && now.hour() < 8) {
+  if (now.hour() > 6 && now.hour() < 8) {
 
     // adjust the playback volume for dawn
 	  AudioOutI2S.volume(10);	
