@@ -20,3 +20,5 @@ Twittr19  - Fringilla coelebs           - Buchfink
 Twittr20  - Carduelis cannabina         - Hänfling
 Twittr21  -                             - Eule
 Twittr22  -                             - Eule & Frösche
+Twittr23  -                             - Schafe
+Twittr24  -                             - Wolfsheulen
