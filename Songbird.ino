@@ -37,7 +37,7 @@ SCL       to SCL (12)
 #include <SD.h>	
 #include <Adafruit_ZeroI2S.h>
 #include <ArduinoSound.h>
-#include <RTClib.h>
+#include <RTClib.h> 
 
 int ledPin = LED_BUILTIN;       // choose the pin for the LED
 int inputPin = 7;               // choose the digital input pin (for PIR sensor)
@@ -95,18 +95,19 @@ RTC_PCF8523 rtc;
 
 
 void setup() {
+  
   pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
 
-  Serial.println("Warming up... wait for a min...");
- // delay execution of sketch for a min, to allow PIR sensor get stabilized
- for( int i = 1; i <= 120; i++) {  // LED blinks until PIR sensor is stabilized
+  Serial.print("Warming up... wait for a min...");
+  // delay execution of sketch for a min, to allow PIR sensor get stabilized
+  for (int i = 1; i <= 40; i++) {  // LED blinks until PIR sensor is stabilized
     digitalWrite(ledPin, HIGH); 
-    delay(100);         
+    delay(300);         
     digitalWrite(ledPin, LOW); 
-    delay(100); 
+    delay(300); 
  }
-  Serial.print("Sensor is ready");     
+  Serial.println("Sensor is ready");     
 
   pinMode(inputPin, INPUT);     // declare sensor as input
   LowPower.attachInterruptWakeup(inputPin, wakeUp, CHANGE);
@@ -125,16 +126,16 @@ void setup() {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
   rtc.start();		// Ensure the clock is running
-  Serial.print("RTC is up and running.");
+  Serial.println("RTC is up and running.");
 
 // setup the SD card, depending on your shield of breakout board	
-  Serial.println("Initializing SD card...");	
+  Serial.print("Initializing SD card...");	
 
   if (!SD.begin()) {	
-    Serial.print("initialization failed!");	
+    Serial.println("initialization failed!");	
     return;	
     }	
-    Serial.print("initialization done.");	
+    Serial.println("initialization done.");	
   
   // create a SDWaveFile	
   Twittr01 = SDWaveFile(filename1);
@@ -353,37 +354,47 @@ void setup() {
 
 
 void loop() {
+  delay(1000);// wait 1 second
   DateTime now = rtc.now();
+
+    Serial.print(now.year(), DEC);
+    Serial.print('/');
+    Serial.print(now.month(), DEC);
+    Serial.print('/');
+    Serial.print(now.day(), DEC);
+    Serial.print(" (");
+    Serial.print(now.hour(), DEC);
+    Serial.print(':');
+    Serial.print(now.minute(), DEC);
+    Serial.print(':');
+    Serial.print(now.second(), DEC);
+    Serial.print(") ");
   
   Serial.println("Motion detected!");	// print on output change
 
   if (now.hour() >= 22 || now.hour() <= 6) {
 
     // adjust the playback volume for night time
-	  AudioOutI2S.volume(5);	
+	  AudioOutI2S.volume(5);
+    Serial.println("It's night!");	
 
-    switch (random(1,6)) {		//play Twittr21 with a higher possiblity
+    switch (random(1,5)) {		
       case 1:
         Serial.println("Playing Twittr21.wav");
         AudioOutI2S.play(Twittr21);
         break;
-     
-      case 2:
-        Serial.println("Playing Twittr21.wav");
-        AudioOutI2S.play(Twittr21);
-        break;
 		    
-      case 3:
+      case 2:
         Serial.println("Playing Twittr22.wav");
         AudioOutI2S.play(Twittr22);
         break;   
       
-      case 4:
+      case 3:
         Serial.println("Playing Twittr23.wav");
         AudioOutI2S.play(Twittr23);
         break;
      
-      case 5:
+      case 4:
         Serial.println("Playing Twittr24.wav");
         AudioOutI2S.play(Twittr24);
         break;   
@@ -393,7 +404,8 @@ void loop() {
   if (now.hour() > 6 && now.hour() < 8) {
 
     // adjust the playback volume for dawn
-	  AudioOutI2S.volume(10);	
+	  AudioOutI2S.volume(10);
+    Serial.println("It's dawn!");	
 
     switch (random(1,4)) {
       case 1:
@@ -413,9 +425,10 @@ void loop() {
     }
   }	
 	
-  else {
+  if (now.hour() >= 8 && now.hour() < 22) {
     // adjust the playback volume for day time
-	  AudioOutI2S.volume(15);	
+	  AudioOutI2S.volume(13);
+    Serial.println("It's day!");	
     
     switch (random(1,21)) {
       case 1:
@@ -512,6 +525,7 @@ void loop() {
         Serial.println("Playing Twittr20.wav");
         AudioOutI2S.play(Twittr20);
         break;
+      
     }      
 }    
       
