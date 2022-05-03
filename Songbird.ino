@@ -372,6 +372,30 @@ void loop() {
   
   Serial.println("Motion detected!");	// print on output change
 
+  if (now.hour() >= 20 && now.hour() < 22) {
+
+    // adjust the playback volume for dusk
+	  AudioOutI2S.volume(13);
+    Serial.println("It's dusk!");	
+
+    switch (random(1,4)) {
+      case 1:
+        Serial.println("Playing Twittr10.wav");
+        AudioOutI2S.play(Twittr10);
+        break;
+     
+      case 2:
+        Serial.println("Playing Twittr11.wav");
+        AudioOutI2S.play(Twittr11);
+        break;   
+      
+      case 3:
+        Serial.println("Playing Twittr12.wav");
+        AudioOutI2S.play(Twittr12);
+        break;
+    }
+  }	
+
   if (now.hour() >= 22 || now.hour() <= 6) {
 
     // adjust the playback volume for night time
@@ -410,22 +434,22 @@ void loop() {
     switch (random(1,4)) {
       case 1:
         Serial.println("Playing Twittr10.wav");
-        AudioOutI2S.play(Twittr21);
+        AudioOutI2S.play(Twittr10);
         break;
      
       case 2:
         Serial.println("Playing Twittr11.wav");
-        AudioOutI2S.play(Twittr22);
+        AudioOutI2S.play(Twittr11);
         break;   
       
       case 3:
         Serial.println("Playing Twittr12.wav");
-        AudioOutI2S.play(Twittr21);
+        AudioOutI2S.play(Twittr12);
         break;
     }
   }	
 	
-  if (now.hour() >= 8 && now.hour() < 22) {
+  if (now.hour() >= 8 && now.hour() < 20) {
     // adjust the playback volume for day time
 	  AudioOutI2S.volume(13);
     Serial.println("It's day!");	
