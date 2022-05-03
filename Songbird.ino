@@ -56,7 +56,6 @@ const char filename10[] = "Twittr10.wav";
 const char filename11[] = "Twittr11.wav";
 const char filename12[] = "Twittr12.wav";
 const char filename13[] = "Twittr13.wav";
-const char filename15[] = "Twittr15.wav";
 const char filename16[] = "Twittr16.wav";
 const char filename17[] = "Twittr17.wav";
 const char filename18[] = "Twittr18.wav";
@@ -81,7 +80,6 @@ SDWaveFile Twittr10;
 SDWaveFile Twittr11;
 SDWaveFile Twittr12;
 SDWaveFile Twittr13;
-SDWaveFile Twittr15;
 SDWaveFile Twittr16;
 SDWaveFile Twittr17;
 SDWaveFile Twittr18;
@@ -151,7 +149,6 @@ void setup() {
   Twittr11 = SDWaveFile(filename11);
   Twittr12 = SDWaveFile(filename12);
   Twittr13 = SDWaveFile(filename13);
-  Twittr15 = SDWaveFile(filename15);
   Twittr16 = SDWaveFile(filename16);
   Twittr17 = SDWaveFile(filename17);
   Twittr18 = SDWaveFile(filename18);
@@ -213,10 +210,6 @@ void setup() {
 	}
   if (!Twittr13) {
     Serial.println("Error opening Twitter13.wav");
-    while (true);
-	}
-  if (!Twittr15) {
-    Serial.println("Error opening Twitter15.wav");
     while (true);
 	}
   if (!Twittr16) {
@@ -310,10 +303,6 @@ void setup() {
     Serial.println("Unable to play Twittr13.wav using I2S!");	
     while (1); // do nothing	
     } 
-  if (!AudioOutI2S.canPlay(Twittr15)) {	
-    Serial.println("Unable to play Twittr15.wav using I2S!");	
-    while (1); // do nothing	
-    } 
   if (!AudioOutI2S.canPlay(Twittr16)) {	
     Serial.println("Unable to play Twittr16.wav using I2S!");	
     while (1); // do nothing	
@@ -378,7 +367,7 @@ void loop() {
 	  AudioOutI2S.volume(13);
     Serial.println("It's dusk!");	
 
-    switch (random(1,4)) {
+    switch (random(1,5)) {
       case 1:
         Serial.println("Playing Twittr10.wav");
         AudioOutI2S.play(Twittr10);
@@ -392,6 +381,11 @@ void loop() {
       case 3:
         Serial.println("Playing Twittr12.wav");
         AudioOutI2S.play(Twittr12);
+        break;
+
+      case 4:
+        Serial.println("Playing Twittr13.wav");
+        AudioOutI2S.play(Twittr13);
         break;
     }
   }	
@@ -431,7 +425,7 @@ void loop() {
 	  AudioOutI2S.volume(10);
     Serial.println("It's dawn!");	
 
-    switch (random(1,4)) {
+    switch (random(1,5)) {
       case 1:
         Serial.println("Playing Twittr10.wav");
         AudioOutI2S.play(Twittr10);
@@ -446,6 +440,11 @@ void loop() {
         Serial.println("Playing Twittr12.wav");
         AudioOutI2S.play(Twittr12);
         break;
+
+      case 4:
+        Serial.println("Playing Twittr13.wav");
+        AudioOutI2S.play(Twittr13);
+        break;
     }
   }	
 	
@@ -454,7 +453,7 @@ void loop() {
 	  AudioOutI2S.volume(13);
     Serial.println("It's day!");	
     
-    switch (random(1,21)) {
+    switch (random(1,19)) {
       case 1:
         Serial.println("Playing Twittr01.wav");
         AudioOutI2S.play(Twittr01);
@@ -519,33 +518,28 @@ void loop() {
         Serial.println("Playing Twittr13.wav");
         AudioOutI2S.play(Twittr13);
         break;
-          
-      case 15:
-        Serial.println("Playing Twittr15.wav");
-        AudioOutI2S.play(Twittr15);
-        break;
         
-      case 16:
+      case 14:
         Serial.println("Playing Twittr16.wav");
         AudioOutI2S.play(Twittr16);
         break;          
 
-      case 17:
+      case 15:
         Serial.println("Playing Twittr17.wav");
         AudioOutI2S.play(Twittr17);
         break;
 		    
-      case 18:
+      case 16:
         Serial.println("Playing Twittr18.wav");
         AudioOutI2S.play(Twittr18);
         break;
         
-      case 19:
+      case 17:
         Serial.println("Playing Twittr19.wav");
         AudioOutI2S.play(Twittr19);
         break;          
 
-      case 20:
+      case 18:
         Serial.println("Playing Twittr20.wav");
         AudioOutI2S.play(Twittr20);
         break;
