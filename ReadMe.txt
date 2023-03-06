@@ -22,7 +22,11 @@ Twittr21  -                             - Eule
 Twittr22  -                             - Eule & Frösche
 Twittr23  -                             - Schafe
 Twittr24  -                             - Wolfsheulen
-Twittr25  -                             - Various1
-Twittr26  -                             - Various2
-Twittr27  -                             - Various3
-Twittr28  -                             - Various4
+Twittr25  -                             - Verschieden1
+Twittr26  -                             - Verschieden2
+Twittr27  -                             - Verschieden3
+Twittr28  -                             - Tropisch1
+Twittr29  -                             - Tropisch2
+Twittr30  -                             - Tropisch3
+Twittr31  -                             - Tropisch4
+Twittr32  -                             - Tropisch5
