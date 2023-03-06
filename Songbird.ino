@@ -164,94 +164,97 @@ void setup() {
   
   // if the file didn't open, print an error and stop
   if (!Twittr01) {
-    Serial.println("Error opening Twitter01.wav");
+    Serial.println("Error opening Twittr01.wav");
     while (true);
 	}	
   if (!Twittr02) {
-    Serial.println("Error opening Twitter02.wav");
+    Serial.println("Error opening Twittr02.wav");
     while (true);
 	}
   if (!Twittr03) {
-    Serial.println("Error opening Twitter03.wav");
+    Serial.println("Error opening Twittr03.wav");
     while (true);
 	}
   if (!Twittr04) {
-    Serial.println("Error opening Twitter04.wav");
-    while (true);
-	}
-  if (!Twittr05) {
-    Serial.println("Error opening Twitter05.wav");
-    while (true);
-	}
-  if (!Twittr06) {
-    Serial.println("Error opening Twitter06.wav");
+    Serial.println("Error opening Twittr04.wav");
     while (true);
 	}	
   if (!Twittr07) {
-    Serial.println("Error opening Twitter07.wav");
+    Serial.println("Error opening Twittr07.wav");
     while (true);
 	}
   if (!Twittr08) {
-    Serial.println("Error opening Twitter08.wav");
-    while (true);
-	}
-  if (!Twittr09) {
-    Serial.println("Error opening Twitter09.wav");
+    Serial.println("Error opening Twittr08.wav");
     while (true);
 	}
   if (!Twittr10) {
-    Serial.println("Error opening Twitter10.wav");
+    Serial.println("Error opening Twittr10.wav");
     while (true);
 	}
   if (!Twittr11) {
-    Serial.println("Error opening Twitter11.wav");
+    Serial.println("Error opening Twittr11.wav");
     while (true);
 	}	
   if (!Twittr12) {
-    Serial.println("Error opening Twitter12.wav");
+    Serial.println("Error opening Twittr12.wav");
     while (true);
 	}
   if (!Twittr13) {
-    Serial.println("Error opening Twitter13.wav");
+    Serial.println("Error opening Twittr13.wav");
     while (true);
 	}
   if (!Twittr16) {
-    Serial.println("Error opening Twitter16.wav");
+    Serial.println("Error opening Twittr16.wav");
     while (true);
 	}	
-  if (!Twittr17) {
-    Serial.println("Error opening Twitter17.wav");
-    while (true);
-	}
-  if (!Twittr18) {
-    Serial.println("Error opening Twitter18.wav");
-    while (true);
-	}
   if (!Twittr19) {
-    Serial.println("Error opening Twitter19.wav");
+    Serial.println("Error opening Twittr19.wav");
     while (true);
 	}
   if (!Twittr20) {
-    Serial.println("Error opening Twitter20.wav");
-    while (true);
-	}
-  if (!Twittr21) {
-    Serial.println("Error opening Twitter21.wav");
+    Serial.println("Error opening Twittr20.wav");
     while (true);
 	}
   if (!Twittr22) {
-    Serial.println("Error opening Twitter22.wav");
+    Serial.println("Error opening Twittr22.wav");
     while (true);
 	}
   if (!Twittr23) {
-    Serial.println("Error opening Twitter23.wav");
+    Serial.println("Error opening Twittr23.wav");
     while (true);
 	}
-  if (!Twittr24) {
-    Serial.println("Error opening Twitter24.wav");
+  if (!Twittr25) {
+    Serial.println("Error opening Twittr25.wav");
     while (true);
 	}
-
+  if (!Twittr26) {
+    Serial.println("Error opening Twittr26.wav");
+    while (true);
+	}
+  if (!Twittr27) {
+    Serial.println("Error opening Twittr27.wav");
+    while (true);
+	}
+  if (!Twittr28) {
+    Serial.println("Error opening Twittr28.wav");
+    while (true);
+	}
+  if (!Twittr29) {
+    Serial.println("Error opening Twittr29.wav");
+    while (true);
+	}
+  if (!Twittr30) {
+    Serial.println("Error opening Twittr30.wav");
+    while (true);
+	}
+  if (!Twittr31) {
+    Serial.println("Error opening Twittr31.wav");
+    while (true);
+	}
+  if (!Twittr32) {
+    Serial.println("Error opening Twittr32.wav");
+    while (true);
+	}
 	
 // check if the I2S output can play the wave file	
   if (!AudioOutI2S.canPlay(Twittr01)) {	
