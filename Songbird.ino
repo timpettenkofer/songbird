@@ -58,14 +58,14 @@ const char filename19[] = "Twittr19.wav";
 const char filename20[] = "Twittr20.wav";
 const char filename22[] = "Twittr22.wav";
 const char filename23[] = "Twittr23.wav";
-const char filename19[] = "Twittr25.wav";
-const char filename20[] = "Twittr26.wav";
-const char filename21[] = "Twittr27.wav";
-const char filename22[] = "Twittr28.wav";
-const char filename23[] = "Twittr29.wav";
-const char filename24[] = "Twittr30.wav";
-const char filename24[] = "Twittr31.wav";
-const char filename24[] = "Twittr32.wav";
+const char filename25[] = "Twittr25.wav";
+const char filename26[] = "Twittr26.wav";
+const char filename27[] = "Twittr27.wav";
+const char filename28[] = "Twittr28.wav";
+const char filename29[] = "Twittr29.wav";
+const char filename30[] = "Twittr30.wav";
+const char filename31[] = "Twittr31.wav";
+const char filename32[] = "Twittr32.wav";
 
 // variable representing the Wave File
 SDWaveFile Twittr01;
