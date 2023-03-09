@@ -14,7 +14,7 @@ and filename must be abcdefgh.wav (8-3) formatted.
 
 
 -- WIRING --
-MAX98735  to MKR Zero
+MAX98357  to MKR Zero
 LRCLK     to -3
 BCLK      to -2
 DIN       to A6
